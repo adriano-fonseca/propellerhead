@@ -1,0 +1,137 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Propellerhead",
+		"_postman_id": "09cfd847-7661-c8e3-71fc-c1bf4751a903",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Customer",
+			"description": "",
+			"item": [
+				{
+					"name": "Create Customer",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer",
+						"method": "POST",
+						"header": [
+							{
+								"key": "passUser",
+								"value": "123456",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "idUser",
+								"value": "afonseca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"name\": \"Adriano Fonseca 3\",\n        \"email\": \"new.adriano.fonseca@gmail.com\",\n        \"phone\": \"519826963377\",\n        \"status\": \"CURRENT\",\n        \"ctrDthInc\": 1286716210000,\n        \"listNote\": [\n            {\n                \"content\": \"abc\"\n            }\n        ]\n    }"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Update Customer",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "passUser",
+								"value": "123456",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "idUser",
+								"value": "afonseca",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Adriano Fonseca 2\",\n  \"email\": \"new.adriano.fonseca@gmail.com\",\n  \"phone\": \"519826963377\",\n  \"status\": \"CURRENT\",\n  \"ctrDthInc\": \"2010-10-10T10:10:10Z\"\n  \n}"
+						},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Find Customer",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer/1",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Get Notes",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer/5/notes",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "List Customers",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer/",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Customer",
+					"request": {
+						"url": "http://localhost:8080/propellerhead/v1/customer/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "passUser",
+								"value": "123456",
+								"description": ""
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "idUser",
+								"value": "afonseca",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": ""
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

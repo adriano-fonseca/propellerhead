@@ -1,0 +1,3 @@
+<jboss-web>
+    <context-root>propellerhead</context-root>
+</jboss-web>

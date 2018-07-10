@@ -1,0 +1,271 @@
+
+{
+    "swagger": "2.0",
+    "info": {
+        "version": "0.0.1",
+        "title": "propellerhead"
+    },
+    "host": "",
+    "basePath": "/propellerhead/v1",
+    "schemes": [
+        "http"
+    ],
+    "tags": [
+    ],
+    "paths": {
+        "/customer": {
+            "get": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Customer"
+                            }
+                        }
+                    }
+                }
+            },
+            "post": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/{idCustomer}": {
+            "get": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "idCustomer",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "idCustomer",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/Customer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "$ref": "#/definitions/DAOException"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "idCustomer",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "object"
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        },
+        "/customer/{idCustomer}/notes": {
+            "get": {
+                "consumes": [
+                    "application/json;charset=utf-8"
+                ],
+                "produces": [
+                    "application/json;charset=utf-8"
+                ],
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "name": "idCustomer",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Note"
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Not Found",
+                        "headers": {
+                        },
+                        "schema": {
+                            "type": "object"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "Customer": {
+            "properties": {
+                "ctrDthInc": {
+                    "type": "object"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "idEntity": {
+                    "type": "integer"
+                },
+                "listNote": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Note"
+                    }
+                },
+                "name": {
+                    "type": "string"
+                },
+                "phone": {
+                    "type": "string"
+                },
+                "status": {
+                    "type": "string",
+                    "enum": [
+                        "CURRENT",
+                        "NONACTIVE",
+                        "PROSPECTIVE"
+                    ]
+                }
+            }
+        },
+        "DAOException": {
+            "properties": {
+            }
+        },
+        "Note": {
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "idClient": {
+                    "type": "integer"
+                },
+                "idEntity": {
+                    "type": "integer"
+                }
+            }
+        }
+    }
+}
